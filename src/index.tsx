@@ -1,39 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-import './index.css';
-import reportWebVitals from './reportWebVitals';
-import {createBrowserRouter, Navigate} from "react-router-dom";
-import TimeSeries from "./features/graph/TimeSeries";
-import {RouterProvider} from "react-router";
-import AppTable from "./features/table/AppTable";
-
-
-const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <App/>,
-        errorElement: <h1>Naughty Naughty</h1>,
-        children: [
-            { index: true, element: <Navigate to="/graph" replace /> },
-            {
-                path: "graph",
-                element: <TimeSeries />
-            },
-            {
-                path: "table",
-                element: <AppTable />
-            },
-        ],
-    },
-]);
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "index.css";
+import reportWebVitals from "reportWebVitals";
+import { RouterProvider } from "react-router";
+import appRouter from "app/appRouter";
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-      <RouterProvider router={router} />
+    <RouterProvider router={appRouter} />
   </React.StrictMode>
 );
 
