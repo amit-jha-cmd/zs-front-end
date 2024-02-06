@@ -51,7 +51,6 @@ export const tableSlice = createSlice({
     },
 })
 
-// Action creators are generated for each case reducer function
 export const {updateSortBy, updateSelectedColumn, jumpToPage} = tableSlice.actions;
 
 export const tableSelector = (state: RootState) => state.table;

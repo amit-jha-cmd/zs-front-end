@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .date-range-main {
+        @apply flex
+        flex-row
+        border
+        rounded-md
+        items-center
+        cursor-pointer
+        hover:shadow-md
+        active:shadow-none
+    }
+
+    .date-range-main-content {
+        @apply flex
+        justify-evenly
+        items-center
+        p-4
+        h-12
+        border-r-2
+        border-gray-100
+    }
+
+    .pencil-container {
+
+    }
+}

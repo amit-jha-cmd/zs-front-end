@@ -7,6 +7,7 @@ import {Button, Modal} from "flowbite-react";
 import {DateTimePicker, LocalizationProvider} from "@mui/x-date-pickers";
 import {AdapterDayjs} from "@mui/x-date-pickers/AdapterDayjs";
 import dayjs from "dayjs";
+import "./dateRangeStyle.css";
 
 function DateTimeRangeSelector() {
     const [openModal, setOpenModal] = useState(false);
@@ -18,13 +19,11 @@ function DateTimeRangeSelector() {
     return (
         <>
             <div
-                className={"flex flex-row border rounded-md items-center cursor-pointer hover:shadow-md active:shadow-none"}
+                className={"date-range-main"}
                 onClick={() => setOpenModal(true)}
             >
                 <div
-                    className={
-                        "flex justify-evenly items-center p-4 h-12 border-r-2 border-gray-100"
-                    }
+                    className={"date-range-main-content"}
                 >
                     <p>{dayjs(startDateTime).format("DD/MM/YYYY - HH:MM A")}</p>
                     <HiArrowRight className="mx-2 h-5 w-5"/>
@@ -35,7 +34,7 @@ function DateTimeRangeSelector() {
                 </div>
             </div>
             <Modal show={openModal} onClose={() => setOpenModal(false)}>
-                <Modal.Header>Terms of Service</Modal.Header>
+                <Modal.Header>Date & Time Selector</Modal.Header>
                 <Modal.Body>
                     <div className="space-y-6">
                         <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
@@ -70,7 +69,7 @@ function DateTimeRangeSelector() {
                             </LocalizationProvider>
                         </div>
                         <p className="text-base leading-relaxed text-red-500 font-mono">
-                            For the purpose of this interview task the data provided was from Aug 4th to Aug 6th, 2021
+                            For the purpose of this interview task the data provided was from Aug 7th to Aug 9th, 2021
                         </p>
                     </div>
                 </Modal.Body>

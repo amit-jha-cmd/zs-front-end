@@ -1,3 +1,5 @@
+@import "features/dateRange/dateRangeStyle.css";
+@import "features/table/tableStyles.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

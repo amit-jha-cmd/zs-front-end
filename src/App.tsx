@@ -30,7 +30,7 @@ function App() {
                     </div>
                     <DateTimeRangeSelector/>
                 </div>
-                <div className="px-6 py-4 flex-1 h-full">
+                <div className="px-6 py-4 flex-1 h-full overflow-y-auto">
                     <Outlet/>
                 </div>
             </div>
