@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
 import graphReducer from "features/graph/graphSlice";
 import tableReducer from "features/table/tableSlice";
+import dateReducer from "features/dateRange/dateRangeSlice";
 
 export const store = configureStore({
     reducer: {
         graph: graphReducer,
         table: tableReducer,
+        date: dateReducer,
     },
 })
 

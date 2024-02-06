@@ -9,6 +9,7 @@ import {
 import { Outlet, useNavigate } from "react-router";
 import {ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import DateTimeRangeSelector from "./features/dateRange/dateTimeRangeSelector";
 
 function App() {
   const navigate = useNavigate();
@@ -29,32 +30,7 @@ function App() {
               </Button>
             </Button.Group>
           </div>
-          <div className={"flex flex-row border rounded-md items-center"}>
-            <div
-              className={
-                "flex justify-evenly items-center p-4 h-12 border-r-2 border-gray-100"
-              }
-            >
-              <p>23/04/2022</p>
-              {/*<LocalizationProvider dateAdapter={AdapterDayjs}>*/}
-              {/*    <DateTimePicker*/}
-              {/*        defaultValue={dayjs('2022-04-17T15:30')}*/}
-              {/*        slotProps={{ textField: { size: 'small' } }}*/}
-              {/*    />*/}
-              {/*</LocalizationProvider>*/}
-              <HiArrowRight className="mx-2 h-5 w-5" />
-              {/*<LocalizationProvider  dateAdapter={AdapterDayjs}>*/}
-              {/*    <DateTimePicker*/}
-              {/*        slotProps={{ textField: { size: 'small' } }}*/}
-              {/*        defaultValue={dayjs('2022-04-17T15:30')}*/}
-              {/*    />*/}
-              {/*</LocalizationProvider>*/}
-              <p>23/04/2022</p>
-            </div>
-            <div className={"flex justify-center w-10"}>
-              <HiPencil className="h-5 w-5" />
-            </div>
-          </div>
+          <DateTimeRangeSelector />
         </div>
         <div className="px-6 py-4 flex-1 h-full">
           <Outlet />

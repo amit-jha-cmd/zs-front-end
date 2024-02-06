@@ -1,4 +1,4 @@
-import {createSlice} from '@reduxjs/toolkit'
+import {createSlice, PayloadAction} from '@reduxjs/toolkit'
 import {RootState} from "lib/dao/store";
 import {fetchAttacks} from "./tableThunks";
 import {TableState} from "./tableInterfaces";
@@ -7,13 +7,22 @@ const initialState: TableState = {
     status: "idle",
     data: [],
     isLoading: false,
-    error: ""
+    error: "",
+    pageNumber: 1,
+    sortBy: undefined,
 };
 
 export const tableSlice = createSlice({
     name: 'table',
     initialState,
-    reducers: {},
+    reducers: {
+        jumpToPage(state, action: PayloadAction<number>) {
+            state.pageNumber = action.payload;
+        },
+        updateSortBy(state, action: PayloadAction<string>) {
+            state.sortBy = action.payload;
+        }
+    },
     extraReducers: (builder) => {
         builder.addCase(fetchAttacks.pending, (state) => {
             state.isLoading = true;
@@ -31,7 +40,7 @@ export const tableSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const {} = tableSlice.actions;
+export const {jumpToPage} = tableSlice.actions;
 
 export const tableSelector = (state: RootState) => state.table;
 

@@ -4,5 +4,7 @@ export interface TableState {
     status: "idle" | "done",
     data: AttackEntryInterface[],
     error: string | undefined,
-    isLoading: boolean
+    isLoading: boolean,
+    pageNumber: number;
+    sortBy: string | undefined,
 }

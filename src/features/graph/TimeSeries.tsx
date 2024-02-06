@@ -16,16 +16,16 @@ import dayjs from "dayjs";
 import {Spinner} from "flowbite-react";
 import {toast} from "react-toastify";
 import {fetchOverview} from "./graphThunks";
+import {dateRangeSelector} from "../dateRange/dateRangeSlice";
 
 export default function TimeSeries() {
     const {status, isLoading, error, data} = useSelector(graphSelector);
+    const {startDateTime, endDateTime} = useSelector(dateRangeSelector);
     const dispatch = useDispatch<AppDispatch>();
 
     useEffect(() => {
-        if (status === "idle") {
-            dispatch(fetchOverview());
-        }
-    }, [dispatch, status])
+        dispatch(fetchOverview());
+    }, [dispatch, status, startDateTime, endDateTime])
 
     useEffect(() => {
         if (status !== "idle" && error) {

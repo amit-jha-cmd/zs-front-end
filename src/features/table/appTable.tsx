@@ -6,12 +6,14 @@ import {AppDispatch} from "../../lib/dao/store";
 import {useEffect} from "react";
 import {fetchOverview} from "../graph/graphThunks";
 import {toast} from "react-toastify";
-import {tableSelector} from "./tableSlice";
+import {jumpToPage, tableSelector} from "./tableSlice";
 import {fetchAttacks} from "./tableThunks";
 import dayjs from "dayjs";
+import {dateRangeSelector} from "../dateRange/dateRangeSlice";
 
 export default function AppTable() {
-    const {status, isLoading, error, data} = useSelector(tableSelector);
+    const {status, isLoading, error, data, pageNumber} = useSelector(tableSelector);
+    const {startDateTime, endDateTime} = useSelector(dateRangeSelector);
     const dispatch = useDispatch<AppDispatch>();
 
     useEffect(() => {
@@ -25,6 +27,10 @@ export default function AppTable() {
             toast.error(error);
         }
     }, [error, status]);
+
+    useEffect(() => {
+        dispatch(fetchAttacks());
+    }, [dispatch, pageNumber, startDateTime, endDateTime]);
 
     return (
         <>
@@ -101,9 +107,10 @@ export default function AppTable() {
 
                 <div className="flex overflow-x-auto sm:justify-center">
                     <Pagination
-                        currentPage={0}
+                        currentPage={pageNumber}
                         totalPages={100}
-                        onPageChange={(s) => {
+                        onPageChange={(pageNumber) => {
+                            dispatch(jumpToPage(pageNumber));
                         }}
                         showIcons
                     />
