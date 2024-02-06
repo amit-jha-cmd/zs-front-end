@@ -7,6 +7,8 @@ import {
   HiPencil,
 } from "react-icons/hi";
 import { Outlet, useNavigate } from "react-router";
+import {ToastContainer} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const navigate = useNavigate();
@@ -58,6 +60,7 @@ function App() {
           <Outlet />
         </div>
       </div>
+      <ToastContainer position={"bottom-right"}/>
     </div>
   );
 }

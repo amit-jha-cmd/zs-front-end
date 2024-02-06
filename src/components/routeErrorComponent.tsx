@@ -2,7 +2,7 @@ import {Button} from "flowbite-react";
 import { HiOutlineArrowRight } from 'react-icons/hi';
 import {useNavigate} from "react-router";
 
-export default function ErrorComponent() {
+export default function RouteErrorComponent() {
     const navigate = useNavigate();
 
     return (
