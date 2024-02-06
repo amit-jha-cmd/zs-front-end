@@ -10,6 +10,7 @@ const initialState: TableState = {
     error: "",
     pageNumber: 1,
     sortBy: undefined,
+    selectedColumns: [],
 };
 
 export const tableSlice = createSlice({
@@ -21,7 +22,14 @@ export const tableSlice = createSlice({
         },
         updateSortBy(state, action: PayloadAction<string>) {
             state.sortBy = action.payload;
-        }
+        },
+        updateSelectedColumn(state, action: PayloadAction<string>) {
+            if (!state.selectedColumns.includes(action.payload)) {
+                state.selectedColumns.push(action.payload);
+            } else {
+                state.selectedColumns = state.selectedColumns.filter((value) => value !== action.payload);
+            }
+        },
     },
     extraReducers: (builder) => {
         builder.addCase(fetchAttacks.pending, (state) => {
@@ -40,7 +48,7 @@ export const tableSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const {jumpToPage} = tableSlice.actions;
+export const {updateSortBy, updateSelectedColumn, jumpToPage} = tableSlice.actions;
 
 export const tableSelector = (state: RootState) => state.table;
 

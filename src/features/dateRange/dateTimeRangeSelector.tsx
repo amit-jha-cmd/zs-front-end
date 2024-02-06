@@ -70,7 +70,7 @@ function DateTimeRangeSelector() {
                             </LocalizationProvider>
                         </div>
                         <p className="text-base leading-relaxed text-red-500 font-mono">
-                            For the purpose of this interview task the data provided was from Aug 4th to Aug 6th
+                            For the purpose of this interview task the data provided was from Aug 4th to Aug 6th, 2021
                         </p>
                     </div>
                 </Modal.Body>

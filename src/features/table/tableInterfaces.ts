@@ -7,4 +7,5 @@ export interface TableState {
     isLoading: boolean,
     pageNumber: number;
     sortBy: string | undefined,
+    selectedColumns: string[],
 }
