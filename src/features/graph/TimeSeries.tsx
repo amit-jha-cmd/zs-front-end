@@ -50,7 +50,7 @@ export default function TimeSeries() {
                     <CartesianGrid strokeDasharray="10 10"/>
                     <XAxis dataKey="minute" tickFormatter={(unixTime) => dayjs(unixTime).format("HH:MM")}/>
                     <YAxis label={{value: 'No. of attacks', angle: -90, position: 'insideLeft'}} domain={[0, 45]}/>
-                    <Tooltip labelFormatter={(unixTime) => dayjs(unixTime).format("hh:MM A • MMM, DD, YYYY")}/>
+                    <Tooltip labelFormatter={(unixTime) => dayjs(unixTime).format("hh:MM A • MMM DD, YYYY")}/>
                     <Legend/>
                     <Line type="monotone" strokeWidth={2} dataKey="count" stroke="#2455a3" activeDot={{r: 9}}/>
                 </LineChart>

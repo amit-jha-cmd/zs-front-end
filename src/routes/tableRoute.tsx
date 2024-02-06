@@ -1,7 +1,7 @@
-import AppTable from "features/table/AppTable";
+import AppTable from "features/table/appTable";
 
 const tableRoute = {
-    path: "graph",
+    path: "table",
     element: <AppTable />,
 };
 

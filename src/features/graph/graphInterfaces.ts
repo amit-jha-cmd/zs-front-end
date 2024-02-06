@@ -1,8 +1,8 @@
-import GetOverviewResponseInterface from "../../lib/interfaces/responses/getOverviewResponseInterface";
+import OverviewEntryInterface from "../../lib/interfaces/overviewEntryInterface";
 
 export interface GraphState {
     status: "idle" | "done",
-    data: GetOverviewResponseInterface[],
+    data: OverviewEntryInterface[],
     error: string | undefined,
     isLoading: boolean
 }

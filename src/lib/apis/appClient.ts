@@ -1,5 +1,4 @@
 import axios, {AxiosInstance} from "axios";
-import ApiInterface from "../interfaces/apiInterface";
 
 class AppClient {
     private static instance: AxiosInstance | null = null;
