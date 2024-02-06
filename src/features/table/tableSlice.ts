@@ -21,7 +21,11 @@ export const tableSlice = createSlice({
             state.pageNumber = action.payload;
         },
         updateSortBy(state, action: PayloadAction<string>) {
-            state.sortBy = action.payload;
+            if(state.sortBy === action.payload) {
+                state.sortBy = undefined;
+            } else {
+                state.sortBy = action.payload;
+            }
         },
         updateSelectedColumn(state, action: PayloadAction<string>) {
             if (!state.selectedColumns.includes(action.payload)) {
