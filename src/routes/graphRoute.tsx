@@ -1,8 +1,9 @@
-import TimeSeries from "features/graph/TimeSeries";
+import React from 'react';
+import TimeSeries from 'features/graph/TimeSeries';
 
 const graphRoute = {
-    path: "graph",
-    element: <TimeSeries />,
+  path: 'graph',
+  element: <TimeSeries />,
 };
 
 export default graphRoute;

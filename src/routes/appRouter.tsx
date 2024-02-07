@@ -1,12 +1,13 @@
-import App from "App";
-import RouteErrorComponent from "components/routeErrorComponent";
-import { Navigate, createBrowserRouter } from "react-router-dom";
-import graphRoute from "./graphRoute";
-import tableRoute from "./tableRoute";
+import React from 'react';
+import App from 'App';
+import RouteErrorComponent from 'components/routeErrorComponent';
+import { Navigate, createBrowserRouter } from 'react-router-dom';
+import graphRoute from 'routes/graphRoute';
+import tableRoute from 'routes/tableRoute';
 
 const appRouter = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <App />,
     errorElement: <RouteErrorComponent />,
     children: [

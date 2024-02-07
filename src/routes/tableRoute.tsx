@@ -1,8 +1,9 @@
-import AppTable from "features/table/appTable";
+import React from 'react';
+import AppTable from 'features/table/appTable';
 
 const tableRoute = {
-    path: "table",
-    element: <AppTable />,
+  path: 'table',
+  element: <AppTable />,
 };
 
 export default tableRoute;

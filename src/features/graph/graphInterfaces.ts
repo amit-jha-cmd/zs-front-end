@@ -1,7 +1,7 @@
-import OverviewEntryInterface from "../../lib/interfaces/overviewEntryInterface";
+import OverviewEntryInterface from 'lib/interfaces/overviewEntryInterface';
 
 export interface GraphState {
-    status: "idle" | "done",
+    status: 'idle' | 'done',
     data: OverviewEntryInterface[],
     error: string | undefined,
     isLoading: boolean
