@@ -6,7 +6,7 @@ class AppClient {
   public static getInstance() {
     if (!AppClient.instance) {
       AppClient.instance = axios.create({
-        baseURL: 'http://localhost:8000/',
+        baseURL: `http://${process.env.REACT_APP_BACKEND_HOST}:${process.env.REACT_APP_BACKEND_PORT}/`,
         timeout: 10000,
       });
     }
