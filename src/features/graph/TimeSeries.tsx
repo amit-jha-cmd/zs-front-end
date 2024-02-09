@@ -54,7 +54,7 @@ export default function TimeSeries() {
           >
             <CartesianGrid strokeDasharray="10 10" />
             <XAxis
-              dataKey="minute"
+              dataKey="hour"
               tickFormatter={(unixTime) => dayjs(unixTime).format('HH:MM')}
             />
             <YAxis
