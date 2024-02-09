@@ -1,5 +1,5 @@
 interface OverviewEntryInterface {
-    minute: string,
+    hour: string,
     count: number,
 }
 

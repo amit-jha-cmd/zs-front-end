@@ -11,18 +11,16 @@ function App() {
   const navigate = useNavigate();
 
   return (
-    <div className="flex justify-center items-center h-screen p-10">
+    <div className="flex justify-center items-center h-screen p-10 md:p-5 sm:p-2">
       <div className="w-screen h-full rounded-md overflow-hidden shadow-md border bg-white flex flex-col">
         <div className="px-4 w-full border-b-2 border-gray-100 flex flex-row justify-between items-center">
           <div className="py-4">
             <Button.Group>
               <Button color="gray" onClick={() => navigate('graph')}>
                 <HiPresentationChartLine className="mr-3 h-4 w-4" />
-                Graph
               </Button>
               <Button color="gray" onClick={() => navigate('table')}>
-                <HiOutlineTable className="mr-3 h-4 w-4" />
-                Table
+                <HiOutlineTable className="h-4 w-4" />
               </Button>
             </Button.Group>
           </div>

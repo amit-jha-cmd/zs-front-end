@@ -16,7 +16,7 @@
 
     .date-range-main-content {
         @apply flex
-        justify-evenly
+        justify-center
         items-center
         p-4
         h-12

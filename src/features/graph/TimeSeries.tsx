@@ -63,7 +63,7 @@ export default function TimeSeries() {
                 angle: -90,
                 position: 'insideLeft',
               }}
-              domain={[0, 45]}
+              domain={[0, 200]}
             />
             <Tooltip
               labelFormatter={(unixTime) => dayjs(unixTime).format('hh:MM A • MMM DD, YYYY')}

@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { HiArrowRight, HiPencil } from 'react-icons/hi';
+import { HiArrowRight, HiPencil, HiCalendar } from 'react-icons/hi';
 import React, { useState } from 'react';
 import { Button, Modal } from 'flowbite-react';
 import { DateTimePicker, LocalizationProvider } from '@mui/x-date-pickers';
@@ -26,12 +26,10 @@ function DateTimeRangeSelector() {
 
   return (
     <>
-      <button type="button" onClick={() => setOpenModal(true)}>
+      <button type="button" aria-label="Date Selector" onClick={() => setOpenModal(true)}>
         <div className="date-range-main">
           <div className="date-range-main-content">
-            <p>{dayjs(startDateTime).format('DD/MM/YYYY - HH:MM A')}</p>
-            <HiArrowRight className="mx-2 h-5 w-5" />
-            <p>{dayjs(endDateTime).format('DD/MM/YYYY - HH:MM A')}</p>
+            <HiCalendar className="h-5 w-5" />
           </div>
           <div className="flex justify-center w-10">
             <HiPencil className="h-5 w-5" />
